@@ -27,7 +27,7 @@ function TimeStat({taskData}) {
             {taskData.length} Tasks
         </h4>
         <h4>
-            Total time: {isNaN(average) ? 0: average} hours
+            Total Time: {isNaN(average) ? 0: average} hours
         </h4>
         
     </div>

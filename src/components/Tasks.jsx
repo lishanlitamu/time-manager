@@ -7,20 +7,6 @@ import {FaTimes} from 'react-icons/fa'
 function Tasks({each, handleClickClose}) {
 
 
-    
-/*
-  const [timeSlot, setTimeSlot] = useState(0)
-  const [text, setText] = useState('loren testing sjssssssgerhjkwejhjehrkjhwjkhejhjkhjhkdjg khejhjkhjh kdkhejhjkhjhkdkhejhjkhjhkdkhejhjkhjhkdkhejhjkhjhkdkhe jhjkhjhkdkhejhjkhjhkdkhejhjkh jhkdkhejhjkhjhkd')
-  // eventhandler is a function take in no parameters
-  const eventhandler = () => {
-    setTimeSlot((originalTime) => {
-        
-        return originalTime + 0.5;
-    })
-  }
-*/
-
-
   return (
     <Card >
         

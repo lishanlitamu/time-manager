@@ -10,28 +10,7 @@ function TaskList({TaskData, handleClickClose}) {
   if(!TaskData || TaskData.length === 0){
     return <p>No Task Listed Yet!</p>
   }
-  // return (
-  //   <div className="task-list">
-  //     <AnimatePresence>
-
-  //       {TaskData.map((item) => ( 
-  //         <motion.div 
-  //             key = {item.taskId}
-  //             initial = {{opacity: 0}}
-  //             animate={{opacity: 1}}
-  //             exit={{opacity: 0}}>
-
-  //           <Tasks key = {item.taskId} each={item} handleClickClose = {handleClickClose}/>
-          
-  //         </motion.div>
-        
-  //       ))}
-  //     </AnimatePresence>
-        
-  //   </div>
-    
-  // )
-
+  
   // without animation
   return (
     <div className="task-list">

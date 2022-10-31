@@ -93,7 +93,7 @@ header {
 
 .rating li:hover,
 .num-display {
-  background: #ff6a95;
+  background: #e63946;
   color: #fff;
 }
 
@@ -102,7 +102,7 @@ header {
 }
 
 [type='radio']:checked ~ label {
-  background: #ff6a95;
+  background: #e63946;
   color: #fff;
 }
 
@@ -124,7 +124,7 @@ input:focus {
   outline: none;
 }
 
-.time-stats {
+.-stats {
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -166,7 +166,7 @@ input:focus {
 }
 
 .btn-secondary {
-  background: #ff6a95;
+  background: #e63946;
 }
 
 .btn:hover {

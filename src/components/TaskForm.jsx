@@ -26,7 +26,7 @@ function TaskForm({handleAddTask}) {
         setMessage(null)
     } else if (text && text.trim().length <= 10) {
         setBtnDisabled(true)
-        setMessage('Please type in a task with more than 10 characters')
+        setMessage('Each task must be at least 10 characters')
     } else {
         
         setMessage(null)
@@ -57,9 +57,9 @@ function TaskForm({handleAddTask}) {
             
             <div className='input-group'>
                 <input onChange={handleNewTaskInput} type='text' 
-                        placeholder='Write and Edit your new task!'
+                        placeholder='Write your new task here!'
                         value = {text}></input>
-                <Button type ='submit' isDisabled={btnDisabled}>Submit</Button>
+                <Button type ='submit' isDisabled={btnDisabled}>Add</Button>
                 
             </div>
             <TimeSelect select={setSelected} selected={selected}></TimeSelect>

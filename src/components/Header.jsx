@@ -28,7 +28,7 @@ function Header({text, bgColor, textColor }) {
 Header.defaultProps = {
     text: 'Flexible Time Manager',
     bgColor: 'rgba(0,0,0,0.4)',
-    textColor: '#ff6a95',
+    textColor: '#fdf0d5',
 }
 
 // define prop types
