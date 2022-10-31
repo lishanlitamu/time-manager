@@ -1,14 +1,22 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-function TimeStat({taskData}) {
+//import PropTypes from 'prop-types'
+import { useContext } from 'react';
+import TaskContext from '../context/TaskContext'
 
+//function TimeStat({taskData}) {
+  function TimeStat() {
 
   // Calculate the total hours
   // in reduce function
   // accumulator and current, two props
   // 0 is the default value to return
+  const {TaskData} = useContext(TaskContext)
+    // update App.js as well
+    //<TimeStat taskData = {TaskData}/>
+    //<TimeStat>
 
-  let average = taskData.reduce((accumulator, curr)=> {
+
+  let average = TaskData.reduce((accumulator, curr)=> {
     return accumulator + curr.selected
   }, 0)
 
@@ -24,7 +32,7 @@ function TimeStat({taskData}) {
   return (
     <div className='time-stats'>
         <h4>
-            {taskData.length} Tasks
+            {TaskData.length} Tasks
         </h4>
         <h4>
             Total Time: {isNaN(average) ? 0: average} hours
@@ -34,11 +42,11 @@ function TimeStat({taskData}) {
   )
 }
 
-TimeStat.propTypes = {
-    taskData: PropTypes.array.isRequired,
-    // if you want to break down taskData to set type for each prop
-    // use PropTypes.arrayOf.
-}
+// TimeStat.propTypes = {
+//     taskData: PropTypes.array.isRequired,
+//     // if you want to break down taskData to set type for each prop
+//     // use PropTypes.arrayOf.
+// }
 
 
 export default TimeStat

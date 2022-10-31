@@ -1,12 +1,18 @@
 import React from 'react'
 import Card from './shared/Card'
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 // Wrap TaskForm within the component Card
 // instead of writing a html <button>, customize one
 import Button from './shared/Button'
 import TimeSelect from './TimeSelect'
-function TaskForm({handleAddTask}) {
+import TaskContext from '../context/TaskContext'
+//function TaskForm({handleAddTask}) {
+function TaskForm() {
   // const [temp, setTemp] = useState(_default_value_for_temp_)
+
+  // use useContext, so no longer need to pass handleAddTask as a prop
+  
+  
   const [text, setText] = useState('')
   const [btnDisabled, setBtnDisabled] = useState(true)
   // btnDisabled is set to true by default until the character limit is satisfied
@@ -15,7 +21,7 @@ function TaskForm({handleAddTask}) {
   // therefore use handleNewTaskInput
   
   const [selected, setSelected] = useState(1)
-
+  const {handleAddTask} = useContext(TaskContext)
 
   const handleNewTaskInput = (event) => {
     // get what's typed in the form

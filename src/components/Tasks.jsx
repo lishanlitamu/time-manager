@@ -3,10 +3,12 @@ import React from 'react'
 import Card from './shared/Card';
 import PropTypes from 'prop-types';
 import {FaTimes} from 'react-icons/fa'
+import {useContext} from 'react'
+import TaskContext from '../context/TaskContext';
 
-function Tasks({each, handleClickClose}) {
-
-
+//function Tasks({each, handleClickClose}) {
+function Tasks({each}) {
+  const {handleClickClose} = useContext(TaskContext)
   return (
     <Card >
         
@@ -24,6 +26,8 @@ function Tasks({each, handleClickClose}) {
     </Card>
   )
 }
+// <FaTimes onClick={() => handleClickClose(each.taskId)} color = 'purple'/>
+
 //<button className='button-clear-time' onClick={eventhandler}>Increase 0.5 hour</button>
     
 Tasks.propTypes = {
