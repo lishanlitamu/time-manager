@@ -2,7 +2,9 @@ import React from 'react'
 //import { useState } from 'react'
 import Card from './shared/Card';
 import PropTypes from 'prop-types';
-function Tasks({item}) {
+import {FaTimes} from 'react-icons/fa'
+
+function Tasks({each, handleClickClose}) {
 
 
     
@@ -21,15 +23,16 @@ function Tasks({item}) {
 
   return (
     <Card >
-        <div className="text-display">
-                {item.taskTitle}
-        </div>
+        
+        <button className='close'>
+          <FaTimes onClick={() => handleClickClose(each.taskId)} color = 'purple'/>
+        </button>
         <div className="num-display">
-            {item.taskId}
+            {each.selected}
             
         </div>
         <p>
-              {item.taskDescription}
+              {each.text}
         </p>
         
     </Card>
@@ -38,7 +41,7 @@ function Tasks({item}) {
 //<button className='button-clear-time' onClick={eventhandler}>Increase 0.5 hour</button>
     
 Tasks.propTypes = {
-  item: PropTypes.object.isRequired
+  each: PropTypes.object.isRequired
 }
 
 

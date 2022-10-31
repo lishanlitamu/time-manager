@@ -1,21 +1,21 @@
 const InputData = [
     {
-        taskId:12,
-        time: 10,
-        taskTitle: 'Melting Layer Detection',
-        taskDescription:'Machine Learning Projects'
+        taskId:'12',
+        selected: 10,
+        //taskTitle: 'Melting Layer Detection',
+        text:'Machine Learning Projects'
       },
       {
-        taskId:23,
-        time: 20,
-        taskTitle: 'RNN Project',
-        taskDescription:'Time series analysis is a great deal. '
+        taskId:'23',
+        selected: 20,
+        //taskTitle: 'RNN Project',
+        text:'Time series analysis is a great deal. '
       },
       {
-        taskId:37,
-        time: 30,
-        taskTitle: 'Stock prediction',
-        taskDescription:'Template'
+        taskId:'37',
+        selected: 30,
+        //taskTitle: 'Stock prediction',
+        text:'Template is a testing '
       }
 ]
 

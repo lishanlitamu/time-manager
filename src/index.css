@@ -124,7 +124,7 @@ input:focus {
   outline: none;
 }
 
-.feedback-stats {
+.time-stats {
   color: #fff;
   display: flex;
   justify-content: space-between;
