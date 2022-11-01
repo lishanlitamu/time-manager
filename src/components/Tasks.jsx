@@ -2,26 +2,32 @@ import React from 'react'
 //import { useState } from 'react'
 import Card from './shared/Card';
 import PropTypes from 'prop-types';
-import {FaTimes} from 'react-icons/fa'
+import {FaTimes, FaEdit} from 'react-icons/fa'
 import {useContext} from 'react'
 import TaskContext from '../context/TaskContext';
 
+
 //function Tasks({each, handleClickClose}) {
 function Tasks({each}) {
-  const {handleClickClose} = useContext(TaskContext)
+  const {handleClickClose, editTask} = useContext(TaskContext)
   return (
     <Card >
-        
-        <button className='close'>
-          <FaTimes onClick={() => handleClickClose(each.taskId)} color = 'purple'/>
-        </button>
+
         <div className="num-display">
             {each.selected}
             
         </div>
-        <p>
+        <button className='close'>
+          <FaTimes onClick={() => handleClickClose(each.taskId)} color = 'purple'/>
+        </button>
+        
+        <button className="edit">
+          <FaEdit onClick={() => editTask(each)} color='purple'/>
+        </button>
+
+        <div className='text-display'>
               {each.text}
-        </p>
+        </div>
         
     </Card>
   )

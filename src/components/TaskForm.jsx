@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './shared/Card'
-import {useState, useContext} from 'react'
+import {useState, useContext, useEffect} from 'react'
 // Wrap TaskForm within the component Card
 // instead of writing a html <button>, customize one
 import Button from './shared/Button'
@@ -21,7 +21,15 @@ function TaskForm() {
   // therefore use handleNewTaskInput
   
   const [selected, setSelected] = useState(1)
-  const {handleAddTask} = useContext(TaskContext)
+  const {handleAddTask, taskEdit, updateTask} = useContext(TaskContext)
+  // whenever taskEdit changes, useEffect will bring side effect to run whatever within {}
+  useEffect(() => {
+    if (taskEdit.edit === true){
+        setBtnDisabled(false)
+        setText(taskEdit.item.text)
+        setSelected(taskEdit.item.selected)
+    }
+  }, [taskEdit])
 
   const handleNewTaskInput = (event) => {
     // get what's typed in the form
@@ -50,7 +58,14 @@ function TaskForm() {
                 selected
 
             }
-        handleAddTask(newText)
+
+        if (taskEdit.edit === true) {
+            updateTask(taskEdit.item.taskId, newText)
+        } else {
+            handleAddTask(newText)
+        }
+        
+        
         setText('')
         }
     }
@@ -60,15 +75,15 @@ function TaskForm() {
     <Card>
         <form className='add-text' onSubmit={handleSubmit}>
             <h2>How many hours would you spend on this new task?</h2>
-            
+            <TimeSelect select={setSelected} selected={selected}></TimeSelect>
             <div className='input-group'>
                 <input onChange={handleNewTaskInput} type='text' 
                         placeholder='Write your new task here!'
                         value = {text}></input>
-                <Button type ='submit' isDisabled={btnDisabled}>Add</Button>
+                <Button type ='submit' isDisabled={btnDisabled}>Submit</Button>
                 
             </div>
-            <TimeSelect select={setSelected} selected={selected}></TimeSelect>
+            
             {message && <div className='message'>{message}</div>}
         </form>
     </Card>
